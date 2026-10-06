@@ -1,0 +1,31 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/BaseStyles.uss?fileID=7433441132597879392&amp;guid=62225137e29364841885351938f5f69b&amp;type=3#BaseStyles"/>
+    <ui:VisualElement name="Container" data-source-type="ScoreManager, Assembly-CSharp" class="container" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Roboto_Mono/static/RobotoMono-Light.ttf?fileID=12800000&amp;guid=55ef92638050ab441bc40b5b377d991d&amp;type=3#RobotoMono-Light&quot;);">
+        <ui:VisualElement name="TopBar" class="top-bar" style="-unity-background-image-tint-color: rgba(22, 0, 0, 0.88); background-color: rgba(25, 0, 54, 0.95); height: 24px; flex-direction: row; padding-left: 15px;">
+            <ui:Label text="Score:" name="ScoreLabel" class="score-label" style="font-size: 7px; width: auto; height: 15px; padding-right: 0; margin-top: 0; margin-left: 0; margin-right: 2px;"/>
+            <ui:Label text="000&#10;" name="ScoreValue" data-source-type="ScoreManager, Assembly-CSharp" class="score-value" style="height: 10px; font-size: 7px; position: relative; padding-top: 0; padding-left: 0; margin-left: 0; margin-top: 5px;">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="m_score" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Label>
+            <ui:VisualElement name="Spacer" class="spacer"/>
+            <ui:VisualElement name="LivesIcon" class="lives-icon"/>
+            <ui:Label text="0" name="LivesValue" data-source-type="ScoreManager, Assembly-CSharp" data-source-path="" class="score-value lives-value">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="m_currentLives" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Label>
+        </ui:VisualElement>
+        <ui:VisualElement name="GameOver" class="game-over-background hidden">
+            <ui:VisualElement name="CentralPanel" class="game-over-central-panel">
+                <ui:Label text="Game Over" name="GameOverLabel" class="game-over-label"/>
+                <ui:VisualElement name="RetryButtonPanel" class="button-panel">
+                    <ui:Label text="Retry" name="RetryButtonLabel" class="button-label"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="ExitButtonPanel" class="button-panel">
+                    <ui:Label text="Exit to Desktop" name="ExitButtonLabel" class="button-label"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
